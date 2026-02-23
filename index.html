@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narthanam Rajaram | Dynamic Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+.contact-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+}
+body{
+background:linear-gradient(135deg,#022c22,#065f46,#064e3b);
+color:white;
+overflow-x:hidden;
+background-attachment: fixed;
+}
+
+.contact-info{
+flex:1;
+background:rgba(255, 255, 255, 0);
+padding:30px;
+border-radius:15px;
+font-size:18px;
+}
+
+.map{
+flex:1;
+}
+
+.map iframe{
+width:100%;
+height:350px;
+border-radius:15px;
+border:none;
+}
+
+/* Responsive for mobile */
+@media(max-width:768px){
+.contact-container{
+flex-direction:column;
+}
+}
+
+/* PARTICLE BACKGROUND */
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* NAVBAR */
+header{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+header h2{
+color:#34d399;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#34d399;
+}
+
+/* SECTIONS */
+section{
+padding:120px 10%;
+}
+
+/* HOME */
+.home{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+min-height:100vh;
+}
+
+.home-text{
+flex:1;
+}
+
+.home-text h1{
+font-size:45px;
+}
+
+.home-text span{
+color:#34d399;
+}
+
+.typing{
+margin-top:10px;
+font-size:20px;
+color:#34d399;
+height:30px;
+}
+
+.profile-pic{
+flex:1;
+text-align:center;
+}
+
+.profile-pic img{
+width:250px;
+height:250px;
+border-radius:50%;
+border:5px solid #34d399;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+}
+
+/* ABOUT */
+.about{
+background:rgba(255,255,255,0.05);
+border-radius:15px;
+padding:30px;
+}
+
+/* SKILLS */
+.skill{
+margin:20px 0;
+}
+
+.skill-bar{
+background:#022c22;
+border-radius:30px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:20px;
+width:0;
+background:linear-gradient(90deg,#34d399,#10b981);
+text-align:right;
+padding-right:10px;
+line-height:20px;
+transition:2s;
+}
+
+/* PROJECT CARDS */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.project{
+background:rgba(255,255,255,0.08);
+padding:20px;
+border-radius:15px;
+transition:0.4s;
+}
+
+.project:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 0 20px #34d399;
+}
+
+/* CONTACT */
+.contact-info{
+margin-bottom:20px;
+}
+
+.map iframe{
+width:100%;
+height:300px;
+border-radius:15px;
+border:none;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.5);
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<header>
+<h3>Narthanam Rajaram</h3>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="home" id="home">
+<div class="home-text">
+<h1>Hello, I'm <span>Narthanam Rajaram</span></h1>
+<div class="typing"></div>
+<h3>Machine Learning Enthusiast | Web Developer</h3>
+</div>
+
+<div class="profile-pic">
+<img src="porfile.jpg.jpeg" alt="Narthanam Rajaram">
+</div>
+</section>
+
+<section id="about" class="about">
+<h1>About Me</h1>
+<h3>
+I completed my schooling at Immaculate Heart of Mary Hr. Sec. School.  
+I pursued my Engineering at Achariya College of Engineering Technology.  
+I am passionate about Machine Learning and Web Development.  
+I completed my Internship at Twiglight IT Solutions where I worked on real-time web projects and gained industry experience.
+</h3>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skill">
+Python
+<div class="skill-bar"><div class="skill-fill" data-percent="100%">0%</div></div>
+</div>
+
+<div class="skill">
+C++
+<div class="skill-bar"><div class="skill-fill" data-percent="60%">0%</div></div>
+</div>
+
+<div class="skill">
+HTML & CSS
+<div class="skill-bar"><div class="skill-fill" data-percent="40%">0%</div></div>
+</div>
+
+</section>
+
+<section id="projects" class="projects">
+<div class="project">
+<h3>Email Spam Detection</h3>
+<p>Machine Learning model using NLP techniques to classify spam emails.</p>
+</div>
+
+<div class="project">
+<h3>Face Mask Detection</h3>
+<p>Deep Learning CNN model for real-time face mask detection.</p>
+</div>
+
+<div class="project">
+<h3>Web Development Projects</h3>
+<p>Responsive and interactive web applications using HTML, CSS & JavaScript.</p>
+</div>
+</section>
+
+<section id="contact" class="contact-section">
+<h2 style="margin-bottom:40px;">Contact Details</h2>
+
+<div class="contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+        <p><strong>📍 Location:</strong> Pondicherry</p>
+        <p><strong>📞 Phone:</strong> 9626986609</p>
+        <p><strong>📧 Email:</strong> narthanam07@gmail.com</p>
+        <p><strong>📧 Email:</strong> narthanamrajaram@gmail.com</p>      
+          <p>
+
+</a>
+    
+
+    
+    
+
+</div>
+</section>
+
+<footer>
+© 2026 Narthanam Rajaram | All Rights Reserved
+</footer>
+
+<script>
+
+/* Typing Effect */
+const roles=["Web Developer","Machine Learning Engineer","Python Expert"];
+let i=0,j=0,current="",deleting=false;
+
+function type(){
+const element=document.querySelector(".typing");
+
+if(!deleting && j<=roles[i].length){
+current=roles[i].substring(0,j++);
+}
+if(deleting && j>=0){
+current=roles[i].substring(0,j--);
+}
+
+element.innerHTML=current;
+
+if(j==roles[i].length) deleting=true;
+if(j==0 && deleting){
+deleting=false;
+i=(i+1)%roles.length;
+}
+
+setTimeout(type,100);
+}
+type();
+
+/* Skill Animation */
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".skill-fill").forEach(bar=>{
+let rect=bar.getBoundingClientRect();
+if(rect.top<window.innerHeight){
+let percent=bar.getAttribute("data-percent");
+bar.style.width=percent;
+
+let count=0;
+let target=parseInt(percent);
+let interval=setInterval(()=>{
+if(count>=target){clearInterval(interval);}
+else{
+count++;
+bar.innerHTML=count+"%";
+}
+},20);
+}
+});
+});
+
+/* Particle Background */
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3,
+d:Math.random()*1
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="rgba(52,211,153,0.6)";
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true);
+ctx.fill();
+});
+update();
+}
+
+function update(){
+particles.forEach(p=>{
+p.y+=p.d;
+if(p.y>canvas.height){
+p.y=0;
+p.x=Math.random()*canvas.width;
+}
+});
+}
+
+setInterval(draw,33);
+
+</script>
+
+</body>
+</html>
